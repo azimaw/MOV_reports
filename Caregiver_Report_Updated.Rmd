@@ -1,0 +1,47 @@
+---
+title: "Caregiver Report Updated"
+author: "Azim Abdul Wahid"
+date: "2024-08-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(openxlsx)
+library(pandoc)
+
+load("output/caregiver_questions_report.Rdata")
+```
+
+
+# Where / How did you hear or see the message? (how info is being received)
+```{r echo=FALSE}
+plot_source_vax_msgs
+
+kable(source_vax_msgs_renamed_data)
+
+pie_source_vax_msgs
+```
+
+# Do you feel that you know the vaccines your child needs? (knowledge)
+```{r , echo=FALSE}
+plot_know_what_vaccines
+kable(know_what_vaccines_renamed)
+pie_know_what_vaccines
+```
+
+# Has this child ever been vaccinated?
+```{r, echo=FALSE}
+plot_child_ever_vaxed
+kable(child_ever_vaxed)
+pie_child_ever_vaxed
+```
+
+# Why didn’t they vaccinate the child?
+```{r, echo=FALSE}
+plot_why_refused_vax
+kable(why_refused_vax)
+pie_why_refused_vax
+```
+
